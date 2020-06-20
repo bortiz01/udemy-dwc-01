@@ -87,6 +87,11 @@ h4 {
 
 /* --------------------------------- Header --------------------------------- */
 
+.site-header {
+  background-color: #333333;
+  padding: 1rem 0 3rem 0;
+}
+
 .site-header.inicio {
   background-image: url(../img/header.jpg);
   background-size: cover;
@@ -286,13 +291,12 @@ h4 {
   border-radius: 2rem;
 }
 
-
 .testimonial p {
   text-align: right;
 }
 
 .testimonial blockquote::before {
-  content: '';
+  content: "";
   background-image: url(../img/comilla.svg);
   /* content: '"';
   font-size: 15rem;
@@ -305,7 +309,7 @@ h4 {
 }
 
 .testimonial blockquote {
-  position: relative;  /*se indica la posicion RELATIVE porque el hijo tendra una posicion ABSOLUTE*/
+  position: relative; /*se indica la posicion RELATIVE porque el hijo tendra una posicion ABSOLUTE*/
   padding-left: 5rem;
   font-weight: 300;
 }
@@ -326,4 +330,23 @@ h4 {
 .copyright {
   margin: 0;
   color: white;
+}
+
+/* -------------------------------- Internas -------------------------------- */
+
+.contenido-nosotros {
+  /*trabajamos con CSS-Grid*/
+  display: grid;
+  /* grid-template-columns: 50% 50%; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-columns: repeat(2, 50%); */
+  grid-template-columns: repeat(2, 1fr); /*fr = fraccion = asignacion*/
+  column-gap: 2rem; /*separacion entre columnas*/
+}
+
+.texto-nosotros blockquote {
+  font-weight: 900;
+  font-size: 2rem;
+  margin: 0;
+  padding: 1rem 0 3rem 0;
 }
