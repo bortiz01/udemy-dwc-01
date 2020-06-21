@@ -207,12 +207,16 @@ h4 {
 }
 
 .iconos-caracteristicas li img {
-  /* margin-left: 4rem; */  
+  /* margin-left: 4rem; */
 }
 
 .ver-todas {
   display: flex;
   justify-content: flex-end;
+}
+
+.texto-anuncio p {
+  text-align: justify;
 }
 
 /* ------------------------------ Contacto Home ----------------------------- */
@@ -290,6 +294,10 @@ h4 {
 
 .texto-entrada span {
   color: #e08709;
+}
+
+.texto-entrada p {
+  text-align: justify;
 }
 
 /* ------------------------------ Testimoniales ----------------------------- */
