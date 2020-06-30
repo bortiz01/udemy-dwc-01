@@ -1,7 +1,6 @@
 /* --------------------------------- General -------------------------------- */
-
 html {
-  box-sizing: border-box; /** util al momenyo de adiconar paddings y que el tamaño se mantenga**/
+  box-sizing: border-box; /** util al momento de adicionar paddings y que el tamaño se mantenga**/
   font-size: 62.5%; /**Reset para REM - 62.5% = 10px de 16px **/
 }
 
@@ -19,12 +18,12 @@ body {
 }
 
 /* -------------------------------- Globales -------------------------------- */
-
 img {
   max-width: 100%;
 }
 
 .contenedor {
+  width: 95%;
   max-width: 120rem; /**= 1200px **/
   margin: 0 auto 0 auto;
 }
@@ -46,7 +45,6 @@ h4 {
 }
 
 /* ------------------------------- Utilidades ------------------------------- */
-
 .seccion {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -69,7 +67,6 @@ h4 {
 }
 
 /* --------------------------------- Botones -------------------------------- */
-
 .boton {
   color: white;
   font-weight: 700;
@@ -77,9 +74,17 @@ h4 {
   font-size: 1.8rem;
   padding: 1rem 3rem;
   margin-top: 3rem;
-  display: inline-block;
   text-align: center;
   border: none;
+  display: block;
+  flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+  .boton {
+    display: inline-block;
+    flex: 0 0 auto;
+  }
 }
 
 .boton-amarillo {
@@ -95,7 +100,6 @@ h4 {
 }
 
 /* --------------------------------- Header --------------------------------- */
-
 .site-header {
   background-color: #333333;
   padding: 1rem 0 3rem 0;
@@ -114,27 +118,53 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contenido-header {
+    text-align: left;
+  }
 }
 
 .contenido-header h1 {
-  color: white;
+  color: #ffffff;
   padding-bottom: 2rem;
   max-width: 60rem;
   line-height: 2;
 }
 
 .barra {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+  }
 }
 
 .navegacion a {
   color: white;
   text-decoration: none;
-  font-size: 1.8rem; /**= 18px **/
+  font-size: 2.2rem; /**= 22px **/
   margin-right: 2rem;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .navegacion a {
+    display: inline-block;
+    font-size: 1.8rem; /**= 18px **/
+    margin-right: 2rem;
+  }
+
+  .navegacion a:last-of-type {
+    margin: 0;
+  }
 }
 
 .navegacion a:hover {
@@ -146,15 +176,21 @@ h4 {
 }
 
 /* ----------------------------- Iconos-Nosotros ---------------------------- */
-
-.iconos-nosotros {
-  display: flex;
-  justify-content: space-between;
+@media (min-width: 768px) {
+  .iconos-nosotros {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .icono {
-  flex-basis: calc(33.3% - 1rem); /** similar al with, utilizado con Flex*/
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .icono {
+    flex-basis: calc(33.3% - 1rem); /** similar al with, utilizado con Flex*/
+  }
 }
 
 .icono h3 {
@@ -163,21 +199,27 @@ h4 {
 }
 
 /* -------------------------------- Anuncios -------------------------------- */
-
-.contenedor-anuncios {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; /*permite determinar si el contenido de debe de cortar (como los texto en notepa) cuando crezca fuera de los margenes o si puede crecer (habilita el scroll horizontal. Default nowrap*/
+@media (min-width: 768px) {
+  .contenedor-anuncios {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /*permite determinar si el contenido de debe de cortar (como los texto en notepa) cuando crezca fuera de los margenes o si puede crecer (habilita el scroll horizontal. Default nowrap*/
+  }
 }
 
 .anuncio {
-  flex: 0 0 calc(33.3% - 1rem); /*forma abreviada de realizar las 3 sentencias siguientes*/
-  /* flex-grow: 0;  determina si el contenido crece al tamanho disponible (ignorando el flex-basis). Default 0
-  flex-shrink: 0; determina si el contenido flex se debe de hacer mas paquenho para ajustarse. Default 1 
+  /* flex-grow: 0;  determina cuanto el contenido crece al tamanho disponible (ignorando el flex-basis). Default 0
+  flex-shrink: 0; determina cuanto el contenido flex se debe de hacer mas paquenho para ajustarse. Default 1 
   flex-basis: calc(33.3% - 1rem); Determina el ancho del contenido dentro del flex (similar al width) */
   border: 1px solid #b5b5b5;
   background-color: #f5f5f5;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .anuncio {
+    flex: 0 0 calc(33.3% - 1rem); /*forma abreviada de realizar las 3 sentencias siguientes*/
+  }
 }
 
 .contenido-anuncio {
@@ -212,7 +254,7 @@ h4 {
 }
 
 .iconos-caracteristicas li img {
-  /* margin-left: 4rem; */
+  margin-left: 2rem;
 }
 
 .ver-todas {
@@ -225,7 +267,6 @@ h4 {
 }
 
 /* ------------------------------ Contacto Home ----------------------------- */
-
 .imagen-contacto {
   background-image: url(../img/encuentra.jpg);
   background-position: center center;
@@ -236,7 +277,8 @@ h4 {
 }
 
 .contenido-contacto {
-  flex: 1;
+  /* flex: 1; indica que debe de tomar todo el espacio disponible (omitiendo el ancho asigando con width en porcentaje */
+  flex: 0 0 95%;
   color: white;
 }
 
@@ -245,36 +287,48 @@ h4 {
 }
 
 /* ---------------------------- Seccion inferior ---------------------------- */
+@media (min-width: 768px) {
+  .seccion-inferior {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.seccion-inferior {
-  display: flex;
-  justify-content: space-between;
-}
+  .seccion-inferior .blog {
+    flex-basis: 60%;
+  }
 
-.seccion-inferior .blog {
-  flex-basis: 60%;
-}
-
-.seccion-inferior .testimoniales {
-  flex-basis: calc(40% - 2rem);
+  .seccion-inferior .testimoniales {
+    flex-basis: calc(40% - 2rem);
+  }
 }
 
 .entrada-blog {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .entrada-blog {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .entrada-blog:last-of-type {
   margin-bottom: 0;
 }
 
-.entrada-blog .imagen {
-  flex-basis: 40%;
+.imagen img {
+  width: 100%;
 }
 
-.entrada-blog .texto-entrada {
-  flex-basis: calc(60% - 3rem);
+@media (min-width: 768px) {
+  .entrada-blog .imagen {
+    flex-basis: 40%;
+  }
+
+  .entrada-blog .texto-entrada {
+    flex-basis: calc(60% - 3rem);
+  }
 }
 
 .texto-entrada a {
@@ -306,7 +360,6 @@ h4 {
 }
 
 /* ------------------------------ Testimoniales ----------------------------- */
-
 .testimonial {
   background-color: #71b100;
   font-size: 2.4rem;
@@ -339,7 +392,6 @@ h4 {
 }
 
 /* --------------------------------- Footer --------------------------------- */
-
 .site-footer {
   background-color: #333333;
   margin: 0;
@@ -347,8 +399,24 @@ h4 {
 
 .contenedor-footer {
   padding: 3rem 0;
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contenedor-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.site-footer nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .site-footer nav {
+    display: block;
+  }
 }
 
 .copyright {
@@ -358,14 +426,16 @@ h4 {
 
 /* -------------------------------- Internas -------------------------------- */
 /* Nosotros */
-.contenido-nosotros {
-  /*trabajamos con CSS-Grid*/
-  display: grid;
-  /* grid-template-columns: 50% 50%; */
-  /* grid-template-columns: 1fr 1fr; */
-  /* grid-template-columns: repeat(2, 50%); */
-  grid-template-columns: repeat(2, 1fr); /*fr = fraccion = asignacion*/
-  column-gap: 2rem; /*separacion entre columnas*/
+@media (min-width: 768px) {
+  .contenido-nosotros {
+    /*trabajamos con CSS-Grid*/
+    display: grid;
+    /* grid-template-columns: 50% 50%; */
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-columns: repeat(2, 50%); */
+    grid-template-columns: repeat(2, 1fr); /*fr = fraccion = asignacion*/
+    column-gap: 2rem; /*separacion entre columnas*/
+  }
 }
 
 .texto-nosotros blockquote {
@@ -383,7 +453,6 @@ h4 {
 }
 
 /* -------------------------------- Contacto -------------------------------- */
-
 .contacto p {
   font-size: 1.5rem;
   color: #4f4f4f;
@@ -450,5 +519,5 @@ textarea {
 }
 
 .forma-submit {
-    text-align: right;
+  text-align: right;
 }
